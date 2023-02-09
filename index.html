@@ -5,15 +5,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="styles/reset.css" />
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-  <title></title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  <title>Food & Nutrition</title>
 </head>
 
 <body>
-  <header>
-  </header>
+    <header>
+        <!-- Navigation Bar-->
+        <div class="d-flex justify-content-end">
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <button class="btn btn-outline-success" type="button">HOME</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button">Readme</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button">Contacts</button>
+              <button class="btn btn-sm btn-outline-secondary" type="button">About Us</button>
+            </form>
+            </nav>
+        </div>
+
+        <!-- Hero Jumbotron -->
+        <div>
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Food and Nutrition</h1>
+              <p class="lead">Choose your meal, get a recipe and know its nutritional value</p>
+            </div>
+          </div>
+
+        </div>
+        
+    </header>
+    
+    <!-- Search Bar -->
+    <div class="input-group rounded d-flex justify-content-center">
+        <input type="search" id="searchBar" class="form-control rounded" placeholder="Search Meal" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+            <i class="fas fa-search"></i>
+        </span>
+        
+    </div>
+
 
   <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
