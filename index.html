@@ -1,25 +1,96 @@
 <!DOCTYPE html>
-<html lang="en-gb">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="styles/reset.css" />
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-  <title></title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+  <title>Food nutrition Website</title>
 </head>
 
-<body>
-  <header>
-  </header>
+</html>
 
-  <!-- Moment.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="script.js"></script>
+<body>
+  <!-- Nav bar -->
+
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+  </ul>
+  <!-- Container for header -->
+  <div class="container header">
+    <div class="row h-100 align-items-center">
+      <div class="col text-center">
+        <h1><b>Find meals for your ingredients🎉</b></h1>
+        <b></b>
+        <h5>Real food doesnt have ingredients, real food is ingredients</h5>
+        <b></b>
+        <h5><i>- Jamie Oliver</i></h5>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+</header>
+<!-- Search Bar -->
+<div class="search-container">
+  <div class="form-outline">
+    <input type="search" id="form1" class="form-control" placeholder="Search" />
+    <button type="button" class="btn btn-primary" style="background-color: #e902cd;">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</div>
+<div class="secondHeader">
+  <h1><b>Your search results:</b></h1>
+</div>
+
+<!-- Cards -->
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="Images/brown-stew-chicken-cropped-2.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><b>Brown Stew Chicken</b></h5>
+      <button type="button" class="btn btn-secondary button2" style="background-color: #e902cd;">Get recipe</button>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="Images/chicken-cass29508-768x960.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><b>Chicken and mushroom hotpot</b></h5>
+      <button type="button" class="btn btn-secondary button2" style="background-color: #e902cd;">Get recipe</button>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="Images/Chicken.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><b>Chicken Alfredo</b></h5>
+      <button type="button" class="btn btn-secondary button2" style="background-color: #e902cd;">Get recipe</button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
