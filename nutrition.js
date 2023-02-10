@@ -9,7 +9,8 @@ $(document).ready(function () {
 
   // # Named Functions:
   // ## Function for AJAX request (api.api-ninjas.com):
-  function nutrition(location, input) {
+  function nutrition(input) {
+  
     // Convert input to "Abc":
     input = input.trim();
     var nInput = input[0].toUpperCase() + input.slice(1);
@@ -17,7 +18,7 @@ $(document).ready(function () {
     // Detect if data is already collected:
     for (i = 0; i < nutritionLog.length; i++) {
       if (nutritionLog[i].name === nInput) {
-        nutritionPrint(location, nutritionLog[i]);
+        nutritionPrint(nutritionLog[i]);
         return
       }
     }
@@ -32,9 +33,9 @@ $(document).ready(function () {
         }
 
     }).then(function(response) {
-      // Detect invalid response from API:
+      // Detect invalid response from API, print nutritionLog[0] error values:
       if (!$.trim(response)) {
-        nutritionPrint(location, nutritionLog[0])
+        nutritionPrint(nutritionLog[0])
         return
       } else {
 
@@ -61,16 +62,15 @@ $(document).ready(function () {
 
         // Add the temporary variable to the Nutrition Log, and download to local storage:
         nutritionLog.push(nItem);
-        nutritionLogString = JSON.stringify(nutritionLog);
+        var nutritionLogString = JSON.stringify(nutritionLog);
         localStorage.setItem("nutritionLog", nutritionLogString);
 
         // Return nutritional information of the ingredient:
-        nutritionPrint(location, nItem)
+        nutritionPrint(nItem)
         return
       }
     });
   }
-
 
   // ## Function to detect and load nutritionLog data saved to local storage:
   function nutritionLogLoad() {
@@ -79,7 +79,7 @@ $(document).ready(function () {
       nutritionLog = JSON.parse(localStorage.getItem("nutritionLog"));
     } else {
       // Preload ingredient not found error message to nutritionLog:
-      var nutritionError = "Error";
+      var nutritionError = "Ingredient not found!";
       nutritionLog = [
         {
           name: nutritionError,
@@ -98,42 +98,44 @@ $(document).ready(function () {
       ]
     }
   }
-
+        // <div class="modal-dialog modal-dialog-scrollable" role="document"></div>
   // ## Function to print paragraph to document:
-  function nutritionPrint (location, obj) {
-    var nutritionList = $(`
-      <h2>` + obj.name + `</h2>
-      <p>
-        per 100mg
-        <br>
-        <br> Calories: ` + obj.calories + `
-        <br> Carbohydrates: ` + obj.carbohydrates + `
-        <br> Cholesterol: ` + obj.cholesterol + `
-        <br> Fat: ` + obj.fat + `
-        <br> of which saturates: ` + obj.fat_saturated + `
-        <br> Fiber: ` + obj.fiber + `
-        <br> Potassium: ` + obj.potassium + `
-        <br> Protein: ` + obj.protein + `
-        <br> Sodium: ` + obj.sodium + `
-        <br> Sugar: ` + obj.sugar + `
-      </p>
+  function nutritionPrint (obj) {
+    $("#modal").empty();
+    $("#modal").append(`
+      <div class="modal fade" id="nutritionModal" tabindex="-1" role="dialog" aria-labelledby="nutritionModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="margin:0 auto;">
+              <h2 class="modal-title" id="nutritionModalTitle" style="color:#0097FF">` +  obj.name + `</h5>
+            </div>
+
+            <div class="modal-body">
+              <p class="text-center">
+                <i> per 100mg </i>
+                <br>
+                <br><b> Calories: </b>` + obj.calories + `
+                <br><b> Carbohydrates: </b>` + obj.carbohydrates + `
+                <br><b> Cholesterol: </b>` + obj.cholesterol + `
+                <br><b> Fat: </b>` + obj.fat + `
+                <br><i> of which saturates: </i>` + obj.fat_saturated + `
+                <br><b> Fiber: </b>` + obj.fiber + `
+                <br><b> Potassium: </b>` + obj.potassium + `
+                <br><b> Protein: </b>` + obj.protein + `
+                <br><b> Sodium: </b>` + obj.sodium + `
+                <br><b> Sugar: </b>` + obj.sugar + `
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     `);
-    location.empty();
-    location.append(nutritionList);
+    $("#nutritionModal").modal("toggle");
   }
 
 
   // Initialise webpage:
   nutritionLogLoad();
-
-
-  // Buttons:
-  $(".btn").on("click", async function(event) {
-    event.preventDefault();
-
-    // nutrition("Output <div>", "Ingredient");
-    nutrition($("#output"), $("#searchBar").val().trim());
-  })
 
 
 });
