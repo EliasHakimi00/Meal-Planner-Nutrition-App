@@ -1,3 +1,59 @@
+body {
+    background-color: rgb(0, 5, 158);
+}
+
+
 #searchBar {
     flex: .5 auto;
+}
+
+.jumbotron {
+    background: url(images/Hero.jpg) no-repeat right;
+    text-align: center;
+    background-color: rgb(12, 5, 7);
+    color: black;
+    border-radius: 0;
+    border-bottom: 5px solid goldenrod;
+    margin-bottom: 15px;
+    padding-bottom: 25px;
+  }
+
+.row {
+    padding: 15px;
+}
+
+.carouselIMG {
+    float: left;
+    width:  100px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 30px
+}
+
+.jumbotronText {
+    color: aliceblue;
+}
+
+.btn-link{
+    background-color: #343a40;
+    border-radius: 5%;
+    transition: ease-out 0.9s;
+    color: ghostwhite;
+  }
+  
+.btn-link:hover{
+    box-shadow: inset 300px 0 0 0 goldenrod;
+  
+}
+
+.pCarousel {
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: hsl(70, 52%, 80%, 20%);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.jumbotronText {
+    font-family: 'Rakkas', cursive;
 }
