@@ -2,16 +2,14 @@
 $(document).ready(function () {
 
   // # Define Global Varables:
-  // ## Array of objects, storing each item's nutritional data:
+  // ## Collect an array of objects from the API data, storing each searched item's nutritional information:
   var nutritionLog;
 
 
   // # Named Functions:
   // ## Function for AJAX request (api.api-ninjas.com):
   function nutrition(input) {
-  
     // Convert input to "Abc":
-    input = input.trim();
     var nInput = input[0].toUpperCase() + input.slice(1);
 
     // Detect if data is already collected:
@@ -34,11 +32,11 @@ $(document).ready(function () {
     }).then(function(response) {
       // Detect invalid response from API, print nutritionLog[0] error values:
       if (!$.trim(response)) {
-        nutritionPrint(nutritionLog[0])
+        nutritionPrint("error")
         return
       } else {
 
-        // Add response to a temporary variable nItem:
+        // Add response to a temporary variables nName and nItem:
         var nName = response[0].name.toString();
         nName[0].toUpperCase() + nName.slice(1)
 
@@ -59,82 +57,74 @@ $(document).ready(function () {
             sugar: response[0].sugar_g.toString() + "g"
           }
 
-        // Add the temporary variable to the Nutrition Log, and download to local storage:
+        // Add the temporary variables to the Nutrition Log array of objects, and download to local storage:
         nutritionLog.push(nItem);
         var nutritionLogString = JSON.stringify(nutritionLog);
         localStorage.setItem("nutritionLog", nutritionLogString);
 
-        // Return nutritional information of the ingredient:
+        // Return the nutritional information of the ingredient:
         nutritionPrint(nItem)
         return
       }
     });
   }
 
-  // ## Function to detect and load nutritionLog data saved to local storage:
+  // ## Function to detect and load previous nutritionLog array of objects, saved to local storage:
   function nutritionLogLoad() {
-    // Detect data saved to local storage:
     if (localStorage.getItem("nutritionLog") !== null) {
       nutritionLog = JSON.parse(localStorage.getItem("nutritionLog"));
     } else {
-      // Preload ingredient not found error message to nutritionLog:
-      var nutritionError = "Ingredient not found!";
-      nutritionLog = [
-        {
-          name: nutritionError,
-          calories: nutritionError,
-          carbohydrates: nutritionError,
-          cholesterol: nutritionError,
-          serving_size: nutritionError,
-          fat: nutritionError,
-          fat_saturated: nutritionError,
-          fiber: nutritionError,
-          potassium: nutritionError,
-          protein: nutritionError,
-          sodium: nutritionError,
-          sugar: nutritionError,
-        }
-      ]
+      // Otherwise define nutritionLog as an array of objects:
+      nutritionLog = [{}]
     }
   }
-        // <div class="modal-dialog modal-dialog-scrollable" role="document"></div>
-  // ## Function to print paragraph to document:
-  function nutritionPrint (obj) {
-    $("#modal").empty();
-    $("#modal").append(`
-      <div class="modal fade" id="nutritionModal" tabindex="-1" role="dialog" aria-labelledby="nutritionModalTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header" style="margin:0 auto;">
-              <h2 class="modal-title" id="nutritionModalTitle" style="color:#0097FF">` +  obj.name + `</h5>
-            </div>
 
-            <div class="modal-body">
-              <p class="text-center">
-                <i> per 100mg </i>
-                <br>
-                <br><b> Calories: </b>` + obj.calories + `
-                <br><b> Carbohydrates: </b>` + obj.carbohydrates + `
-                <br><b> Cholesterol: </b>` + obj.cholesterol + `
-                <br><b> Fat: </b>` + obj.fat + `
-                <br><i> of which saturates: </i>` + obj.fat_saturated + `
-                <br><b> Fiber: </b>` + obj.fiber + `
-                <br><b> Potassium: </b>` + obj.potassium + `
-                <br><b> Protein: </b>` + obj.protein + `
-                <br><b> Sodium: </b>` + obj.sodium + `
-                <br><b> Sugar: </b>` + obj.sugar + `
-              </p>
-            </div>
-          </div>
+  // ## Function to print nutritional information paragraph to document:
+  function nutritionPrint (obj) {
+    $("#nutritional-information").empty();
+    if (obj === "error") {
+      $("#nutritional-information").append(`
+        <div class="p-0">
+          <p class="text-center notFound p-0">Sorry, ingredient not found!</p>
         </div>
-      </div>
-    `);
-    $("#nutritionModal").modal("toggle");
+      `);
+    } else {
+      $("#nutritional-information").append(`
+        <div style="margin:0 auto;">
+          <h3 style="color:#0097FF">` +  obj.name + `</h3>
+        </div>
+
+        <div class="p-0">
+          <p class="text-center p-0">
+            <i> per 100g </i>
+            <br>
+            <br><b> Calories: </b>` + obj.calories + `
+            <br><b> Carbohydrates: </b>` + obj.carbohydrates + `
+            <br><b> Cholesterol: </b>` + obj.cholesterol + `
+            <br><b> Fat: </b>` + obj.fat + `
+            <br><i> of which saturates: </i>` + obj.fat_saturated + `
+            <br><b> Fiber: </b>` + obj.fiber + `
+            <br><b> Potassium: </b>` + obj.potassium + `
+            <br><b> Protein: </b>` + obj.protein + `
+            <br><b> Sodium: </b>` + obj.sodium + `
+            <br><b> Sugar: </b>` + obj.sugar + `
+          </p>
+        </div>
+      `);
+    }
   }
 
 
   // Initialise webpage:
   nutritionLogLoad();
+
+
+  // Buttons:
+  $("#search-btn").on("click", function(event) {
+    event.preventDefault();
+    // nutrition(Ingredient);
+    nutrition($("#search-input").val().trim());
+  })
 
 
 });
