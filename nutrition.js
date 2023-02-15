@@ -1,7 +1,6 @@
 // jQuery
 $(document).ready(function () {
 
-
   // # Define Global Varables:
   // ## Array of objects, storing each item's nutritional data:
   var nutritionLog;
