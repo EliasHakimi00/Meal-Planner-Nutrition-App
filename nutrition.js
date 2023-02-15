@@ -82,56 +82,37 @@ $(document).ready(function () {
 
   // ## Function to print nutritional information paragraph to document:
   function nutritionPrint (obj) {
-    $("#modal").empty();
+    $("#nutritional-information").empty();
     if (obj === "error") {
-      $("#modal").append(`
-        <div class="modal fade" id="nutritionModal" tabindex="-1" role="dialog" aria-labelledby="nutritionModalTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header" style="margin:0 auto;">
-                <h2 class="modal-title" id="nutritionModalTitle" style="color:#0097FF">` +  "404" + `</h5>
-              </div>
-
-              <div class="modal-body">
-                <p class="text-center">
-                  <i> Ingredient not found! </i>
-                </p>
-              </div>
-            </div>
-          </div>
+      $("#nutritional-information").append(`
+        <div class="p-0">
+          <p class="text-center notFound p-0">Sorry, ingredient not found!</p>
         </div>
       `);
     } else {
-      $("#modal").append(`
-        <div class="modal fade" id="nutritionModal" tabindex="-1" role="dialog" aria-labelledby="nutritionModalTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header" style="margin:0 auto;">
-                <h2 class="modal-title" id="nutritionModalTitle" style="color:#0097FF">` +  obj.name + `</h5>
-              </div>
+      $("#nutritional-information").append(`
+        <div style="margin:0 auto;">
+          <h3 style="color:#0097FF">` +  obj.name + `</h3>
+        </div>
 
-              <div class="modal-body p-0 pb-3">
-                <p class="text-center">
-                  <i> per 100g </i>
-                  <br>
-                  <br><b> Calories: </b>` + obj.calories + `
-                  <br><b> Carbohydrates: </b>` + obj.carbohydrates + `
-                  <br><b> Cholesterol: </b>` + obj.cholesterol + `
-                  <br><b> Fat: </b>` + obj.fat + `
-                  <br><i> of which saturates: </i>` + obj.fat_saturated + `
-                  <br><b> Fiber: </b>` + obj.fiber + `
-                  <br><b> Potassium: </b>` + obj.potassium + `
-                  <br><b> Protein: </b>` + obj.protein + `
-                  <br><b> Sodium: </b>` + obj.sodium + `
-                  <br><b> Sugar: </b>` + obj.sugar + `
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="p-0">
+          <p class="text-center p-0">
+            <i> per 100g </i>
+            <br>
+            <br><b> Calories: </b>` + obj.calories + `
+            <br><b> Carbohydrates: </b>` + obj.carbohydrates + `
+            <br><b> Cholesterol: </b>` + obj.cholesterol + `
+            <br><b> Fat: </b>` + obj.fat + `
+            <br><i> of which saturates: </i>` + obj.fat_saturated + `
+            <br><b> Fiber: </b>` + obj.fiber + `
+            <br><b> Potassium: </b>` + obj.potassium + `
+            <br><b> Protein: </b>` + obj.protein + `
+            <br><b> Sodium: </b>` + obj.sodium + `
+            <br><b> Sugar: </b>` + obj.sugar + `
+          </p>
         </div>
       `);
     }
-    $("#nutritionModal").modal("toggle");
   }
 
 
@@ -140,10 +121,10 @@ $(document).ready(function () {
 
 
   // Buttons:
-  $(document).on("click", ".nut", function(event) {
+  $("#search-btn").on("click", function(event) {
     event.preventDefault();
     // nutrition(Ingredient);
-    nutrition($(this).text());
+    nutrition($("#search-input").val().trim());
   })
 
 
