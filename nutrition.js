@@ -91,7 +91,7 @@ $(document).ready(function () {
     } else {
       $("#nutritional-information").append(`
         <div style="margin:0 auto;">
-          <h3 style="color:#0097FF">` +  obj.name + `</h3>
+          <h3 style="color:#2a607c">` +  obj.name + `</h3>
         </div>
 
         <div class="p-0">
