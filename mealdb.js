@@ -6,12 +6,17 @@ const searchInput = document.querySelector("#search-input");
 const typingText = "Enter an ingredient";
 
 // event listeners
-searchBtn.addEventListener('click', getMealList);
+// searchBtn.addEventListener('click', getMealList);
 mealList.addEventListener('click', getMealRecipe);
 recipeCloseBtn.addEventListener('click', () => {
     mealDetailsContent.parentElement.classList.remove('showRecipe');
 });
 
+$("#search-input").keypress(function(event) {
+    if (event.keyCode === 13) {
+        $("#search-btn").click();
+    }
+});
 
 // get meal list that matches with the ingredients
 function getMealList(){

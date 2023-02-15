@@ -124,6 +124,7 @@ $(document).ready(function () {
     event.preventDefault();
     // nutrition(Ingredient);
     nutrition($("#search-input").val().trim());
+    getMealList();
   })
 
 
