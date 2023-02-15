@@ -1,9 +1,8 @@
 /* #searchBar {
     flex: .5 auto;
 } */
-/* Elias CSS */
-/* Navigation Bar and Footer CSS */
-/* Text CSS */
+/* Nav Bar */
+/* Nav bar */
 h1, h2, h3 , h4, h5, h6, footer {
     font-family: 'Anton', sans-serif;
   }
@@ -25,7 +24,7 @@ h1, h2, h3 , h4, h5, h6, footer {
     color: #fff;
 }
 
-#Meal-Planner h1 .Planner{
+#Meal-Planner h1 .Hakimi{
     color: blanchedalmond;
 }
 /* End of Text CSS */
@@ -58,45 +57,7 @@ h1, h2, h3 , h4, h5, h6, footer {
     font-size: 15px;
   }
 /* End of Navigation Bar CSS */
-
-
-/* Footer CSS */
-.container-fluid3{
-    background-color: #2a607c;
-    color: blanchedalmond;
-}
-
-#Link4 {
-    display: flex;
-    justify-content: center;
-
-}
-
-.container-fluid3 #links a{
-    display: inline-block;
-    transform: translate(-50%, 0);
-    left: 45.75%;
-    position: relative;
-    text-align: center;
-    height: 40px; 
-    width: 40px; 
-    background-color: rgba(255, 255, 255, 0.2); 
-    margin-right: 0 10px 10px 0;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #fff;
-    transition: all 0.5s ease;
-}
-
-.container-fluid3 #links a:hover {
-    color: #24262b;
-    background-color: #ffffff;
-}
-/* End of Footer CSS */
-
-
-/* End of Navigation Bar and Footer CSS */
-
+/* End of Nav Bar */
 *{
     padding: 0;
     margin: 0;
@@ -155,6 +116,7 @@ body{
 .search-btn{
     width: 100%;
     border: 1px solid ;
+    color: black;
 }
 .search-control{
     padding: 0 1rem;
@@ -162,7 +124,7 @@ body{
     font-family: inherit;
     outline: 0;
     border: 1px solid ;
-    border-color: #fff;
+    border-color: black;
     color: black;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
@@ -205,9 +167,9 @@ body{
     width: 55px;
     height: 55px;
     font-size: 1.8rem;
-    background-color: #fff;
-    color: black;
-    border: black;
+    background-color:black;
+    color: #fff;
+    border-color: black;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
     transition: all 0.4s linear;
@@ -217,9 +179,7 @@ body{
     -o-transition: all 0.4s linear;
     border: 1px solid ;
 }
-.search-btn:hover{
-    background: var(--tenne-tawny-dark);
-}
+
 .meal-result{
     margin-top: 4rem;
 }
@@ -247,10 +207,11 @@ body{
 .meal-name h3{
     font-size: 1.4rem;
 }
+
 /* add in for nutrition button */
-.nutrition-btn,.recipe-btn, .heart-btn{
+.nutrition-btn, .recipe-btn, .heart-btn{
     text-decoration: none;
-    color: rgb(237, 153, 8);
+    color: rgb(244, 196, 3);
     background: #fff;
     font-weight: 500;
     font-size: 1.1rem;
@@ -269,13 +230,8 @@ body{
     -ms-transition: all 0.4s linear;
     -o-transition: all 0.4s linear;
 }
-.recipe-btn:hover{
-    background: var(--tenne-tawny-dark);
-}
-.nutrition-btn:hover{
-    background: var(--tenne-tawny-dark);
-    border: 1px solid ;
-}
+
+
 /* meal details */
 .meal-details{
     position: fixed;
@@ -303,13 +259,14 @@ body{
     width: 10px;
 }
 .meal-details::-webkit-scrollbar-thumb{
-    background: black;
+    background: #fff;
     border-radius: 2rem;
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     -ms-border-radius: 2rem;
     -o-border-radius: 2rem;
 }
+
 
 /* js related */
 .showRecipe{
@@ -327,7 +284,7 @@ body{
     right: 2rem;
     top: 2rem;
     font-size: 1.8rem;
-    color: black;
+    background: #fff;
     border: none;
     width: 35px;
     height: 35px;
@@ -439,3 +396,37 @@ body{
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* Footer CSS */
+.container-fluid3{
+    background-color: #2a607c;
+    color: blanchedalmond;
+}
+
+#Link4 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.container-fluid3 #links a{
+    display: inline-block;
+    transform: translate(-50%, 0);
+    left: 45.75%;
+    position: relative;
+    text-align: center;
+    height: 40px; 
+    width: 40px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    margin-right: 0 10px 10px 0;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.container-fluid3 #links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+/* End of Footer CSS */
