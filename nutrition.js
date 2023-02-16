@@ -123,6 +123,7 @@ $(document).ready(function () {
   $("#search-btn").on("click", function(event) {
     event.preventDefault();
     // nutrition(Ingredient);
+    $(".title").css("visibility", "visible");
     nutrition($("#search-input").val().trim());
     getMealList();
   })
