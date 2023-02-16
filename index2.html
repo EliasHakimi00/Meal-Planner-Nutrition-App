@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Anton|Jura&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style2.css" />
+<title>Food & Nutrition</title>
+<!-- End of Bootstrap CSS -->
+</head>
+
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark customNav">
+  <div id="Meal-Planner">
+      <h1>Meal<span class="Planner"> Planner</span></h1>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#Link1">Do Watch That <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Link2">About Us</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="#Link3">Use Instructions</a>
+        </li>
+      <li class="nav-item">
+        <a class="btn btn-primary btn-lg navCTA" href="#Link4" role="button">Social Media</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- End of Navigation Bar -->
+  <div class = "container">
+    <div class = "meal-wrapper">
+      <div class = "meal-search">
+        <h2 class = "title">Meal Planner & Nutrition App</h2>
+        <blockquote>What I say is true - Anyone can cook, but only the fearless can be great!<br>
+          <cite>- Chef Gusteau (Ratatouille 2007)</cite>
+        </blockquote>
+        
+        <div class = "meal-search-box">
+          <input type = "text" class = "search-control" placeholder="Enter an ingredient" id = "search-input">
+          <button type = "submit" class = "search-btn btn" id = "search-btn">
+            <i class = "fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Nutritional Information -->
+      <div class = "meal-result">
+        <h2 class = "title">Nutritional Information</h2>
+        <div id= "nutritional-information"></div>
+      </div>
+
+      <!-- Relevant Recipes -->
+      <div class = "meal-result">
+        <h2 class = "title">Relevant Recipes</h2>
+        <div id= "meal"></div>
+      </div>
+      
+      <div class = "meal-details">
+        <!-- recipe close btn -->
+        <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+          <i class = "fas fa-times"></i>
+        </button>
+        <!-- meal content -->
+        <div class = "meal-details-content">
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <div class="container-fluid3">
+    <div id="Link4" div class="Footer">
+        <h4>Social Media</h4>
+    </div>
+    <div id="links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  <!-- End of Footer -->
+  
+  <!-- Moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="nutrition.js"></script>
+  <script src="mealdb.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
