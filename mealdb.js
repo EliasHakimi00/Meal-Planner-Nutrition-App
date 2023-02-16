@@ -34,10 +34,8 @@ function getMealList(){
                         </div>
                         <div class = "meal-name">
                             <h3>${meal.strMeal}</h3>
-                            <div style="justify-content: center;">
-                                <a href = "#" class = "recipe-btn btn btn-outline-dark btn-floating m-1" role="button">Get Recipe</a>
-                                <a href = "#" class = "nutrition-btn btn btn-outline-dark btn-floating m-1" role="button"><i class="fa-regular fa-heart"></i></a>
-                            </div>
+                            <a href = "#" class = "recipe-btn btn btn-outline-dark btn-floating m-1" role="button">Get Recipe</a>
+                            <a href = "#" class = "nutrition-btn btn btn-outline-dark btn-floating m-1" role="button"><i class="fa-regular fa-heart"></i></a>
                         </div>
                     </div>
                 `;
