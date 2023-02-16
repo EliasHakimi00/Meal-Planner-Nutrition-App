@@ -6,12 +6,17 @@ const searchInput = document.querySelector("#search-input");
 const typingText = "Enter an ingredient";
 
 // event listeners
-searchBtn.addEventListener('click', getMealList);
+// searchBtn.addEventListener('click', getMealList);
 mealList.addEventListener('click', getMealRecipe);
 recipeCloseBtn.addEventListener('click', () => {
     mealDetailsContent.parentElement.classList.remove('showRecipe');
 });
 
+$("#search-input").keypress(function(event) {
+    if (event.keyCode === 13) {
+        $("#search-btn").click();
+    }
+});
 
 // get meal list that matches with the ingredients
 function getMealList(){
@@ -29,8 +34,8 @@ function getMealList(){
                         </div>
                         <div class = "meal-name">
                             <h3>${meal.strMeal}</h3>
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
-                            <a href = "#" class = "nutrition-btn">View Nutritional Content</a>
+                            <a href = "#" class = "recipe-btn btn btn-outline-dark btn-floating m-1" role="button">Get Recipe</a>
+                            <a href = "#" class = "nutrition-btn btn btn-outline-dark btn-floating m-1" role="button"><i class="fa-regular fa-heart"></i></a>
                         </div>
                     </div>
                 `;

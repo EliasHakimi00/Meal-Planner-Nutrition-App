@@ -6,63 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Anton|Jura&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style2.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="style2.css" />
-<title>Food & Nutrition</title>
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Anton|Jura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style2.css" />
+  <title>Food & Nutrition</title>
 <!-- End of Bootstrap CSS -->
 </head>
 
 <body>
   <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark customNav">
-  <div id="Meal-Planner">
-      <h1>Meal<span class="Planner"> Planner</span></h1>
-  </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#Link1">Do Watch That <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Link2">About Us</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#Link3">Use Instructions</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark customNav">
+    <div id="Meal-Planner">
+        <h1>Meal<span class="Planner"> Planner</span></h1>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a href="savePage.html">
+            <button class="btn btn-sm btn-outline-light" type="button">My meals</button>
+          </a>
         </li>
-      <li class="nav-item">
-        <a class="btn btn-primary btn-lg navCTA" href="#Link4" role="button">Social Media</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!-- End of Navigation Bar -->
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#rdMe-modal">Readme</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#contacts-modal">Contacts</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-light" type="button" data-bs-toggle="modal" data-bs-target="#abtUs-modal">About Us</button>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary btn-lg navCTA" href="#Link4" role="button">Social Media</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End of Navigation Bar -->
+
   <div class = "container">
     <div class = "meal-wrapper">
       <div class = "meal-search">
-        <h2 class = "title">Meal Planner & Nutrition App</h2>
+        <h2 class = "headTitle">Meal Planner & Nutrition App</h2>
         <blockquote>What I say is true - Anyone can cook, but only the fearless can be great!<br>
           <cite>- Chef Gusteau (Ratatouille 2007)</cite>
         </blockquote>
+        
         <div class = "meal-search-box">
           <input type = "text" class = "search-control" placeholder="Enter an ingredient" id = "search-input">
           <button type = "submit" class = "search-btn btn" id = "search-btn">
             <i class = "fas fa-search"></i>
           </button>
         </div>
-  
       </div>
+
+      <!-- Nutritional Information -->
+      <div class = "meal-result">
+        <h2 class = "title">Nutritional Information</h2>
+        <div id= "nutritional-information"></div>
+      </div>
+
+      <!-- Relevant Recipes -->
       <div class = "meal-result">
         <h2 class = "title">Relevant Recipes</h2>
-        <div id= "meal">
-        </div>
+        <div id= "meal"></div>
       </div>
       
       <div class = "meal-details">
@@ -97,6 +113,91 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
     ></script>
   <!-- End of API 2  -->
   
+  <!-- Navbar modals -->
+  <!-- ReadMe -->
+  <div class="modal" tabindex="-1" id="rdMe-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Readme</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>ReadMe</p>
+          <p>ReadMe</p>
+          <p>ReadMe</p>
+          <p>ReadMe</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contacts -->
+  <div class="modal" tabindex="-1" id="contacts-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Contacts</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Name: </li>
+            <li>eMail: </li>
+            <li>Phone: </li>
+            <li>GitHub</li>
+          </ul>
+          <ul>
+            <li>Name: </li>
+            <li>eMail: </li>
+            <li>Phone: </li>
+            <li>GitHub</li>
+          </ul>
+          <ul>
+            <li>Name: </li>
+            <li>eMail: </li>
+            <li>Phone: </li>
+            <li>GitHub</li>
+          </ul>
+          <ul>
+            <li>Name: </li>
+            <li>eMail: </li>
+            <li>Phone: </li>
+            <li>GitHub</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Us -->
+    <div class="modal" tabindex="-1" id="abtUs-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">About Us</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Daley:</p>
+            <p>Dave Heseltine:</p>
+            <p>Deco Macie:</p>
+            <p>Elias Hakimi:</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Navbar modals -->
+
   <!-- Footer -->
   <div class="container-fluid3">
     <div id="Link4" div class="Footer">
@@ -111,12 +212,20 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
   </div>
   <!-- End of Footer -->
   
-  <script src = "mealdb.js"></script>
   <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="nutrition.js"></script>
+  <script src="mealdb.js"></script>
   <script src="script.js"></script>
+  <!-- Bootstrap -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+    crossorigin="anonymous">
+  </script>
+
 </body>
 
 </html>
