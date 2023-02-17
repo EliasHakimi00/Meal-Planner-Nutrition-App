@@ -62,7 +62,9 @@ ___
 # Students
 ## Cutler, Daley
 
-(User Story, Description, etc)
+My role was to work along side Deco and work on the visual aspects of the website. We worked independently on our own design, working top down. Using elements (Nav bar, cards, buttons) from bootstrap to create a framework. We eventually settled on the strongest design within the team and i assisted with cosmetic changes such as adding 'save icons' and changing the nav bar icons to match those on the boot strap cards.
+
+For the final version i would like to see the nutritional calculator produce reports that offer meaningful automated metrics that can assist the user to need to make less decisions.
 
 </br>
 
