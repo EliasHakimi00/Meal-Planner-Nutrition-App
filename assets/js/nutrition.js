@@ -1,6 +1,7 @@
 // jQuery
 $(document).ready(function () {
 
+
   // # Define Global Varables:
   // ## Collect an array of objects from the API data, storing each searched item's nutritional information:
   var nutritionLog;
