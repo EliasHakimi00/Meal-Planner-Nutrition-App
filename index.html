@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-gb">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,16 +15,17 @@
   />
   <link href="https://fonts.googleapis.com/css?family=Anton|Jura&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style2.css" />
-  <title>Food & Nutrition</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Meal Planner Nutrition App</title>
 <!-- End of Bootstrap CSS -->
 </head>
+
 
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark customNav">
     <div id="Meal-Planner">
-        <h1>Meal<span class="Planner"> Planner</span></h1>
+        <h1>Meal<span class="Planner"> Planner</span> & Nutrition App</h1>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,29 +95,10 @@
   
     </div>
   </div>
-
-  <!-- API 2 -->
-    <!-- Trigger/Open The Modal -->
-    <!-- <input type="text" id="search-input">
-    <button id="myBtn">Show Nutritional Information</button> -->
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="result"></div>
-      </div>
-    </div>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      crossorigin="anonymous"
-    ></script>
-  <!-- End of API 2  -->
   
   <!-- Navbar modals -->
   <!-- ReadMe -->
-  <div class="modal" tabindex="-1" id="rdMe-modal">
+  <div class="modal fade" tabindex="-1" id="rdMe-modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -136,7 +119,7 @@
   </div>
 
   <!-- Contacts -->
-  <div class="modal" tabindex="-1" id="contacts-modal">
+  <div class="modal fade" tabindex="-1" id="contacts-modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -177,7 +160,7 @@
   </div>
 
   <!-- About Us -->
-    <div class="modal" tabindex="-1" id="abtUs-modal">
+    <div class="modal fade" tabindex="-1" id="abtUs-modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -199,7 +182,7 @@
     <!-- End of Navbar modals -->
 
   <!-- Footer -->
-  <div class="container-fluid3">
+  <div class="container-fluid3 p-3">
     <div id="Link4" div class="Footer">
         <h4>Social Media</h4>
     </div>
@@ -216,16 +199,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="nutrition.js"></script>
-  <script src="mealdb.js"></script>
-  <script src="script.js"></script>
+  <script src="assets/js/nutrition.js"></script>
+  <script src="assets/js/mealdb.js"></script>
   <!-- Bootstrap -->
   <script 
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
     crossorigin="anonymous">
   </script>
-
+  
 </body>
+
 
 </html>
