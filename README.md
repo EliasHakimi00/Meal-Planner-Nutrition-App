@@ -105,8 +105,27 @@ While the current version works as originally intended, for future development I
 </br>
 
 ## Macie, Dercio
-
 (User Story, Description, etc)
+User Story:
+```
+We are what we eat... Literally.
+```
+
+</br>
+
+Being tasked with seting the structure and style for the project's web page I found the number of possibilities both amazing and easy to get lost into. In the end we chose to go with a simple fuctional webpage looking.   
+
+The  use of bootstrap certainly made it simpler though additional CSS had to be introduced (via .css,.js and inline styling ) to further personallize the page to the client's taste (ours in this case).
+
+We've also used multiple modals to interact with the user;
+</br>
+
+<img src="./assets/img/modals01.png" width="400"><a href="#references">*[4]*</a>
+<img src="./assets/img/modals02.png" width="400"><a href="#references">*[4]*</a>
+
+</br>
+
+
 
 </br>
 
